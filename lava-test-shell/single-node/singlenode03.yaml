@@ -13,10 +13,6 @@ metadata:
         - arndale
         - panda
         - beaglebone-black
-run:
-    steps:
-		- export http_proxy=http://proxy-png.intel.com:911
-		- export https_proxy=http://proxy-png.intel.com:911
 install:
     deps:
         - curl
