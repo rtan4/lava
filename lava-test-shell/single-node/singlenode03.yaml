@@ -13,6 +13,10 @@ metadata:
         - arndale
         - panda
         - beaglebone-black
+run:
+    steps:
+        - export http_proxy=http://proxy-png.intel.com:911
+        - export https_proxy=http://proxy-png.intel.com:911
 install:
     deps:
         - curl
@@ -22,10 +26,6 @@ install:
         - iputils-ping
 run:
     steps:
-        - export http_proxy=http://proxy-png.intel.com:911
-        - export https_proxy=http://proxy-png.intel.com:911
-		- apt -q update
-        - apt -q -y install curl lsb-release usbutils net-tools iputils-ping
         - lava-test-case linux-linaro-ubuntu-netstat --shell netstat -an
         - lava-test-case linux-linaro-ubuntu-ifconfig-dump --shell ifconfig -a
         - lava-test-case linux-linaro-ubuntu-route-dump-a --shell route
