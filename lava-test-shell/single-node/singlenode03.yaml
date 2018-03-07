@@ -15,16 +15,6 @@ metadata:
         - beaglebone-black
 run:
     steps:
-
-install:
-    deps:
-        - curl
-        - lsb-release
-        - usbutils
-        - net-tools
-        - iputils-ping
-run:
-    steps:
         - export http_proxy=http://proxy-png.intel.com:911
         - export https_proxy=http://proxy-png.intel.com:911
         - apt-get -q update
